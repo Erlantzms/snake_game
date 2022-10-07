@@ -15,12 +15,14 @@ function App() {
   
   //snake changes
   useEffect(()=>{
-    snake.shift()
-    if(new Set(snake).size < snake.length) {
-      setGameOver(true)
-      setSnake([0])
-      setMeal()
-    }
+      // setTimeout(() => {
+        snake.shift()
+        if(new Set(snake).size < snake.length) {
+          setGameOver(true)
+          setSnake([0])
+          setMeal()
+        }
+      // }, 1000);    
   },[snake])
 
   const handleKeyPress = (event) => {
@@ -40,10 +42,9 @@ function App() {
   }
 
   const moveSnake = (movement)=>{
-    // setTimeout(() => {
       let lastElement=snake[snake.length - 1]
       setSnake([...snake, lastElement+movement])
-    // }, 500 );
+
   }
 
   const checkPoints = (mov)=>{
