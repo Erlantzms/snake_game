@@ -43,7 +43,7 @@ function App() {
     // setTimeout(() => {
       let lastElement=snake[snake.length - 1]
       setSnake([...snake, lastElement+movement])
-    // }, 500);
+    // }, 500 );
   }
 
   const checkPoints = (mov)=>{
