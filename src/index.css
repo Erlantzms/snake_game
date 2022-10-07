@@ -1,13 +1,111 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:regular,bold,italic&subset=latin,latin-ext');
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family: "Press Start 2P", -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.background{
+  background-color: rgb(28, 28, 28);
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.board{
+  width: 50vh;
+  height: 50vh;
+  margin: 20px;
+  border: 5px dashed rgb(120, 182, 120);
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.counter{
+  color: white;
+  margin: 12px;
+  padding: 8px;
+  width: 20vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid;
+}
+
+.box {
+  box-sizing: border-box;
+  background-color:  rgb(28, 28, 28);
+  /* border: 0.5px solid rgb(120, 182, 120); */
+  width: 10%;
+  height: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.snake {
+  width: 50%;
+  height: 50%;
+  border-radius: 50%;
+  background-color: rgb(120, 182, 120);;
+  display: flex;
+}
+
+.extra-ball{
+  width: 50%;
+  height: 50%;
+  border-radius: 50%;
+  background-color: rgba(237, 114, 53, 0.9);
+  display: flex;
+  transform: scale(1);
+  animation: pulse-black 1s infinite;
+}
+
+.game-over{
+  position: absolute;
+  color: white;
+  font-size: x-large;
+  animation: parpadeo 1s infinite;
+}
+
+@keyframes pulse-black {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(237, 114, 53, 0.7);
+  }
+  
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 10px rgba(237, 114, 53, 0);
+  }
+  
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(237, 114, 53, 0);
+  }
+}
+
+@keyframes parpadeo {
+  0% {
+    transform: scale(0.95);
+    opacity: 20%;
+  }
+  
+  50% {
+    transform: scale(1);
+    opacity: 100%;
+  }
+  
+  100% {
+    transform: scale(0.95);
+    opacity: 20%;
+  }
 }
